@@ -1,0 +1,63 @@
+https://zoom.us/j/96326695978 SDLC
+https://zoom.us/j/98622723922 java
+KULLANICIDAN DEÐER ÝSTEME
+ 	Scanner scan = new Scanner(System.in);
+        System.out.println("Lütfen Bir tam sayi giriniz");
+        int sayi = scan.nextInt();
+veya harf için 
+	char ch = scan.next().charAt(0);
+------------------------------------------------------------------
+Auto Widening (Otomatik Genisletme)
+Dar veri tipinden daha genis bir very tipine gecmek iztedigimizde Java donusumu otomatik
+olarak yapacaktir. 
+	byte num1 = 12;   short num2 = num1;
+----------------------------------------------------------------
+Pre Incerement   
+	int a=15;  int b=++a;  output b=16
+--------------------------------------------------------------
+Post Incerement
+	int a=15;  int b=a++;  output b=15
+-----------------------------------------------------------------
+Increment Deðer Artýrma
+	int numA=2;  numA=numA+3;  veya numA+=3; numA++;
+	int numB=2;  numB=numB*3;  veya numB*=3; 
+---------------------------------------------------
+Decrement Deðer Azaltma
+	int numA=2;  numA=numA-3;  veya numA-=3; numA--;
+	int numB=2;  numB=numB/3;  veya numB/=3; 
+----------------------------------------------
+Modulus Mod islemi 
+	int a=15%4  out a=3
+-----------------------------------------------------
+WrapperClass (String ifadeyi integer a çevirir )
+        String str1="12345";        String str2="23456";       
+        System.out.println( str1 + str2 ); // 1234523456
+        System.out.println(Integer.valueOf(str1) +  Integer.valueOf(str2) ); // 35801
+-------------------------------------------------------------
+"=" yerine .equals kullanýmý
+if(gunIsmi.equals("pazar") || gunIsmi.equals("cumartesi")) {......}
+-------------------------------------------------------------------
+Girilen deðeri küçük harflere veya büyük harfe dönüþtürme
+  	String gunIsmi= scan.next().toLowerCase();      String gunIsmi= scan.next().toUpperCase();
+-----------------------------------------------------------------------------------------
+Switch Statement (ifadesi)
+	switch(sayi)
+	{
+		case 1 : System.out.println("Sayý = Bir");
+			break;
+		case 2 : System.out.println("Sayý = Ýki");
+		 	break;
+		case 1 : System.out.println("Sayý = Üç");
+		 	break;
+		default : System.out.println("Sayý bulunamadý");
+		 	break;
+	}
+
+switch() de long kullanilmaz, float kullanilmaz, double kullanilmaz, boolean kullanilmaz.
+		switch() de int, byte, short, char, String kullanilir.
+------------------------------------------------------------------------------------------
+
+----------------------------------
+cntr shift alt L     düzenleme
+
+---------------------------------
