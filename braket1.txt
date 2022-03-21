@@ -1,0 +1,43 @@
+private void btn_Craete_Braket_Click(object sender, EventArgs e)
+        {    
+       
+            Point3d p0 = new Point3d(0, Convert.ToDouble(txt_H.Text), 0);
+            Plane cplane = Plane.WorldXY;
+            cplane.Origin = p0;
+            Circle cir1 = new Circle(cplane, Convert.ToDouble(txt_r1.Text)); cir1.Reverse();
+            Curve r1 = new ArcCurve(new Arc(cir1, new Interval(Math.PI / 180 * 0, Math.PI / 180 * 90)));
+            Curve H = new LineCurve(new Point3d(0, Convert.ToDouble(txt_H.Text) - Convert.ToDouble(txt_r1.Text), 0), new Point3d(0, Convert.ToDouble(txt_r2.Text), 0));
+            cplane = Plane.WorldXY;
+            Circle cir2 = new Circle(cplane, Convert.ToDouble(txt_r2.Text));
+            Curve r2 = new ArcCurve(new Arc(cir2, new Interval(Math.PI / 180 * 0, Math.PI / 180 * 90)));
+            Curve L = new LineCurve(new Point3d(Convert.ToDouble(txt_r2.Text), 0, 0), new Point3d(Convert.ToDouble(txt_L.Text) - Convert.ToDouble(txt_r3.Text), 0, 0));
+            cplane = Plane.WorldXY;
+            cplane.Origin = new Point3d(Convert.ToDouble(txt_L.Text), 0, 0);
+            Circle cir3 = new Circle(cplane, Convert.ToDouble(txt_r3.Text));
+            Curve r3 = new ArcCurve(new Arc(cir3, new Interval(Math.PI / 180 * 90, Math.PI / 180 * 180)));
+            Curve A = new LineCurve(new Point3d(Convert.ToDouble(txt_r1.Text), Convert.ToDouble(txt_H.Text), 0), new Point3d(Convert.ToDouble(txt_A.Text), Convert.ToDouble(txt_H.Text), 0));
+            Curve B = new LineCurve(new Point3d(Convert.ToDouble(txt_L.Text), Convert.ToDouble(txt_r3.Text), 0), new Point3d(Convert.ToDouble(txt_L.Text), Convert.ToDouble(txt_B.Text), 0));
+            Curve DAB = new LineCurve(new Point3d(Convert.ToDouble(txt_L.Text), Convert.ToDouble(txt_B.Text), 0), new Point3d(Convert.ToDouble(txt_A.Text), Convert.ToDouble(txt_H.Text), 0));
+            Curve[] curves = { r1, H, r2, L, r3, A, B, DAB }; Brep[] brep = Brep.CreatePlanarBreps(curves);
+            Curve curve = new LineCurve(new Point3d(0, 0, 0), new Point3d(0, 0, Convert.ToDouble(txt_thk.Text)));
+            BrepFace face1 = brep[0].Faces[0]; Brep brep11 = face1.CreateExtrusion(curve, true);
+            Guid Braket_id = RhinoDoc.ActiveDoc.Objects.AddBrep(brep11);
+
+            RhinoDoc.ActiveDoc.Objects.UnselectAll();
+            RhinoDoc.ActiveDoc.Objects.Select(Braket_id);
+            Plane OLDPlane = RhinoDoc.ActiveDoc.Views.ActiveView.ActiveViewport.ConstructionPlane();
+            RhinoDoc.ActiveDoc.Views.ActiveView.ActiveViewport.SetConstructionPlane(Plane.WorldXY);
+            Point3d nokta1id = new Point3d(0, 0, 0);
+            Point3d nokta2id = new Point3d(0, Convert.ToDouble(txt_H.Text), 0);            
+            Point3d nokta3id = new Point3d(Convert.ToDouble(txt_L.Text), 0, 0);
+
+            string veri = Convert.ToString(nokta1id) + " " + Convert.ToString(nokta2id) + " " + Convert.ToString(nokta3id) + " ";
+            RhinoApp.RunScript("_-Orient3Pt " + veri, false);
+
+            RhinoDoc.ActiveDoc.Views.ActiveView.ActiveViewport.SetConstructionPlane(OLDPlane);
+
+
+
+
+
+        }
