@@ -1,0 +1,16 @@
+git --version |git versiyon kontrolü
+git config --global user.name "Mustafa Budak" |göderen kişinini adı belirlenir
+git config --global user.email mbudak@gmail.com" |göderen kişinini email belirlenir1
+
+
+git clone https://github.com/MustafaBudak41/test.git |Projeyi bilgisayara indirme
+git add .
+git commit -m"ilk yükleme"
+
+
+git remote add origin https://github.com/MustafaBudak41/Budaks.git
+git branch -M filiz
+git push -u origin filiz 
+
+
+https://github.com/MustafaBudak41/Budaks.git
