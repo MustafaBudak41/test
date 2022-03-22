@@ -1,11 +1,11 @@
-git --version |git versiyon kontrolü
-git config --global user.name "Mustafa Budak" |göderen kiþinini adý belirlenir
-git config --global user.email mbudak@gmail.com" |göderen kiþinini email belirlenir1
+git --version |git versiyon kontrolÃ¼
+git config --global user.name "Mustafa Budak" |gÃ¶deren kiÅŸinini adÄ± belirlenir
+git config --global user.email mbudak@gmail.com" |gÃ¶deren kiÅŸinini email belirlenir1
 
 
-git clone https://github.com/MustafaBudak41/test.git |Projeyi bilgisayara indirme
+git clone https://github.com/MustafaBudak41/Filiz.git |Projeyi bilgisayara indirme
 git add .
-git commit -m"ilk yükleme"
+git commit -m"ilk yÃ¼kleme"
 
 
 git remote add origin https://github.com/MustafaBudak41/Budaks.git
@@ -15,28 +15,31 @@ git push -u origin filiz
 
 https://github.com/MustafaBudak41/Budaks.git
 
-git bash yazýp gitbash açýlýr
-pwd - olunan klasörü gösterir
+git bash yazÄ±p gitbash aÃ§Ä±lÄ±r
+pwd - olunan klasÃ¶rÃ¼ gÃ¶sterir
 dir dosya listeleme
 
 cat > mbudak.txt
 evet evet evet
-ctrl+d 			dosya açilip içine text yazýldý..  ctrl+d ile bitirildi.(sonlandirildi)
+ctrl+d 			dosya aÃ§ilip iÃ§ine text yazÄ±ldÄ±..  ctrl+d ile bitirildi.(sonlandirildi)
 
-cat mbudak             dosya içeriði görüntülendi.
-mv mbudak.txt fbudak.txt    mbudak.txt dosyasý fbudak.txt olarak deðiþti.
+cat mbudak             dosya iÃ§eriÄŸi gÃ¶rÃ¼ntÃ¼lendi.
+mv mbudak.txt fbudak.txt    mbudak.txt dosyasÄ± fbudak.txt olarak deÄŸiÅŸti.
 
 ls                dosya listeleme (dir)
 
-echo "# deneme2" >> README.md
+echo "# Forms" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/MustafaBudak41/deneme2.git
+git remote add origin https://github.com/MustafaBudak41/Forms.git
 git push -u origin main
 -------------------------------------------------------------------------
-git remote add origin https://github.com/MustafaBudak41/deneme2.git
+git remote add origin https://github.com/MustafaBudak41/Forms.git
 git branch -M main
 git push -u origin main
 --------------------------------------------------------------------------
+git push origin master --force
+git config --global http.postBuffer 157286400
+git config --global http.postBuffer 524288000
